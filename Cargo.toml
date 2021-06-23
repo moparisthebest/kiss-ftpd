@@ -1,0 +1,27 @@
+[package]
+name = "kiss-ftpd"
+version = "1.0.0"
+authors = ["moparisthebest <admin@moparisthebest.com>"]
+edition = "2018"
+
+description = "FTP server that Keeps It Simple, Stupid"
+repository  = "https://code.moparisthebest.com/moparisthebest/kiss-ftpd"
+keywords    = ["ftp", "file", "kiss"]
+
+license = "AGPL-3.0-or-later"
+readme = "README.md"
+
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+    "*.md",
+]
+
+[dependencies]
+libunftp = "0.17"
+unftp-sbe-fs = "0.1"
+tokio = { version = "1", features = ["rt"] }
+env_logger = { version = "0.8", optional = true, features = [] }
+
+[features]
+default = ["env_logger"]
